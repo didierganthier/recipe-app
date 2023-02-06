@@ -1,0 +1,27 @@
+<div class="flex justify-center text-center p-8">
+  <div class="w-[80%]">
+    <p class="text-xl font-bold mb-2">Public Recipes</p>
+    <ul class="flex flex-col items-center py-4">
+      <% @public_recipes.each do |recipe| %>
+        <li class="bg-white rounded-lg flex justify-between items-center w-[60%] my-2 py-2 px-4 border-2 border-gray-400 hover:shadow-xl">
+          <div class="p-2">
+            <div class="mb-2 text-blue-600 hover:text-blue-300 text-xl font-bold">
+              <%= link_to recipe.name, recipe_path(recipe) %>
+            </div>
+            By: <span class="font-bold"><%= recipe.user.name %></span>
+          </div>
+          <div class="w-[80%] px-2 py-1 flex flex-col items-center gap-2">
+            <div class="flex justify-between w-[50%]">
+              <span>Total food items: </span>
+              <span class="font-bold"><%= recipe.foods.length %></span>
+            </div>
+            <div class="flex justify-between w-[50%]">
+              <span>Total price:</span>
+              <span class="font-bold">$<%= @totals[recipe.id] %></span>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

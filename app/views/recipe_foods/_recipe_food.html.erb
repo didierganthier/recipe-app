@@ -1,0 +1,22 @@
+<div id="<%= dom_id recipe_food %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Quantity:</strong>
+    <%= recipe_food.quantity %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Recipe:</strong>
+    <%= recipe_food.recipe_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Food:</strong>
+    <%= recipe_food.food_id %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this recipe food", recipe_food, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this recipe food', edit_recipe_food_path(recipe_food), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
