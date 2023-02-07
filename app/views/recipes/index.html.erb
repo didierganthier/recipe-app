@@ -1,0 +1,22 @@
+<div class="flex justify-center text-center p-8">
+  <div class="w-[80%]">
+    <div class="text-right mb-8">
+      <%= link_to "Add Recipe", new_recipe_path, class: "py-2 px-4 rounded-lg bg-green-300 hover:bg-green-200 hover:shadow-xl" %>
+    </div>
+    <ul class="flex flex-col items-center py-4">
+      <% @recipes.each do |recipe| %>
+        <li class="bg-white rounded-lg flex justify-between items-center w-[60%] my-2 py-2 px-4 border-2 border-gray-400 hover:shadow-xl">
+          <div class="p-2">
+            <div class="mb-2 text-blue-600 hover:text-blue-300 text-xl font-bold">
+              <%= link_to recipe.name, recipe_path(recipe) %>
+            </div>
+            <%= button_to "Remove", recipe_path(recipe.id), method: :delete, class: "bg-red-200 px-2 py-1 rounded-lg hover:bg-red-400 hover:text-white" %>
+          </div>
+          <div class="w-[80%] px-2 py-1">
+            <%= truncate(recipe.description, length: 100) %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
