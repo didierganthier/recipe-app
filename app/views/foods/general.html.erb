@@ -1,0 +1,27 @@
+<div class="flex justify-center text-center p-8">
+  <div class="w-[80%]">
+    <p class="font-bold text-xl">Shopping List</p>
+    <div class="flex flex-wrap justify-around my-4">
+      <div><span>Amount of food items to buy: </span><span class="font-bold">&nbsp;<%= @foods.length %></span></div>
+      <div><span>Total value of food needed:</span><span class="font-bold">&nbsp;$<%= @total %></span></div>
+    </div>
+    <table class="w-full text-lg table-auto border-collapse">
+      <thead>
+        <tr>
+          <th class="border border-slate-800 py-2">Food</th>
+          <th class="border border-slate-800">Quantity</th>
+          <th class="border border-slate-800">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @foods.each do |food| %>
+          <tr class="odd:bg-white even:bg-green-100">
+            <td class="border border-slate-300 py-2"><%= food.name %></td>
+            <td class="border border-slate-300"><%= food.quantity %></td>
+            <td class="border border-slate-300">$<%= food.price * food.quantity %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
