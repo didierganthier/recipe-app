@@ -22,6 +22,9 @@
         <li>
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0" %>
         </li>
+        <li>
+          <%= image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(current_user.email)}?s=200", class: "h-8 w-8 rounded-full object-cover" %>
+        </li>
       </ul>
     </div>
   </div>
