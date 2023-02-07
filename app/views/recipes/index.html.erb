@@ -8,11 +8,11 @@
 <% else %>
 <% @recipes.each do |recipe| %>
 <%= link_to recipe_path(recipe.id) do %>
-<div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow">
+<div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow my-4">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"><%= recipe.name %></h5>
     <p class="mb-3 font-normal text-gray-700"><%= recipe.description %></p>
     <%= button_to "Delete", recipe_path(recipe.id), method: :delete, class: "inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300" %>
-    </div>
+</div>
   <% end %>
 <% end %>
 <% end %>
