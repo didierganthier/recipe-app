@@ -27,7 +27,7 @@
       <%= form.label :price, "Price" %>
       <%= form.number_field :price, placeholder: 100, required: true, autofocus: true, class: "px-4 py-2 rounded-md mt-2 w-full bg-blue-100" %>
     </div>
-    <div class="bg-green-300 hover:bg-green-100 rounded-lg py-2 text-center font-bold cursor-pointer mt-8 text-gray-700">
+    <div class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 text-center p-2 rounded cursor-pointer">
       <%= form.submit "Add Food", data: { disable_with: "Loading" } %>
     </div>
   <% end %>
