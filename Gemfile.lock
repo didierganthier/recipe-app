@@ -72,6 +72,9 @@ GEM
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    bullet (7.0.7)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     concurrent-ruby (1.2.0)
     crass (1.0.6)
     date (3.3.3)
@@ -122,6 +125,8 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
+    nokogiri (1.14.1-x64-mingw-ucrt)
+      racc (~> 1.4)
     nokogiri (1.14.1-x86_64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -129,6 +134,7 @@ GEM
     parser (3.2.0.0)
       ast (~> 2.4.1)
     pg (1.4.5)
+    pg (1.4.5-x64-mingw-ucrt)
     puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.6.2)
@@ -192,6 +198,8 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    tailwindcss-rails (2.0.21-x64-mingw-ucrt)
+      railties (>= 6.0.0)
     tailwindcss-rails (2.0.21-x86_64-darwin)
       railties (>= 6.0.0)
     thor (1.2.1)
@@ -202,7 +210,10 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2022.7)
+      tzinfo (>= 1.0.0)
     unicode-display_width (2.4.2)
+    uniform_notifier (1.16.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -216,10 +227,12 @@ GEM
     zeitwerk (2.6.6)
 
 PLATFORMS
+  x64-mingw-ucrt
   x86_64-darwin-22
 
 DEPENDENCIES
   bootsnap
+  bullet
   debug
   devise
   importmap-rails
