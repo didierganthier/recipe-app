@@ -1,0 +1,35 @@
+<div class="flex justify-center text-center p-8">
+  <div class="w-[80%]">
+
+  </div>
+</div>
+<div class="flex flex-col justify-center">
+<% if @public_recipes.empty? %>
+    <div class="text-center">
+      <h1 class="text-3xl font-bold">No recipes yet!</h1>
+      <p class="text-xl">Add a recipe to get started.</p>
+      <img class="w-1/2 mx-auto" src="https://cdn-icons-png.flaticon.com/512/2889/2889314.png" alt="No recipes yet">
+    </div>
+<% else %>
+<% @public_recipes.each do |recipe| %>
+<%= link_to recipe_path(recipe.id) do %>
+    <p class="text-xl font-bold mb-2 text-center">Public Recipes</p>
+<div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center"><%= recipe.name %></h5>
+    <p class="mb-3 font-normal text-gray-700"><%= recipe.description %></p>
+        By: <span class="font-bold"><%= recipe.user.name %></span>
+          <div class="px-2 py-1 flex flex-col items-center gap-2 my-5">
+            <div class="flex justify-between">
+              <span>Total food items: </span>
+              <span class="font-bold"><%= recipe.foods.length %></span>
+            </div>
+            <div class="flex justify-between">
+              <span>Total price:</span>
+              <span class="font-bold">$<%= @totals[recipe.id] %></span>
+            </div>
+          </div>
+    </div>
+  <% end %>
+<% end %>
+<% end %>
+</div>

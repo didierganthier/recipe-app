@@ -1,0 +1,41 @@
+<div class="flex justify-center">
+  <%= form_with model: @recipe, class: "my-16 px-8 py-4 w-96 bg-white rounded-lg shadow-lg h-fit" do |form| %>
+    <% if @recipe.errors.any? %>
+      <div>
+        <h3><%= pluralize(@recipe.errors.count, "error") %> occurred: </h3>
+        <ul>
+          <%= @recipe.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <h2 class="text-xl font-bold text-center text-gray-700">Add a New Recipe</h2>
+    <div class="my-4">
+      <%= form.label :name, "Name" %>
+      <%= form.text_field :name, placeholder: "Name", required: true, autofocus: true, class: "px-4 py-2 rounded-md mt-2 w-full bg-blue-100" %>
+    </div>
+    <div class="my-4">
+      <%= form.label :preparation_time, "Preparation Time" %>
+      <%= form.number_field :preparation_time, placeholder: 0, required: true, autofocus: true, class: "px-4 py-2 rounded-md mt-2 w-full bg-blue-100" %>
+    </div>
+    <div class="my-4">
+      <%= form.label :cooking_time, "Cooking Time" %>
+      <%= form.number_field :cooking_time, placeholder: 0, required: true, autofocus: true, class: "px-4 py-2 rounded-md mt-2 w-full bg-blue-100" %>
+    </div>
+    <div class="my-4">
+      <%= form.label :description, "Description" %>
+      <%= form.text_area :description, placeholder: "A description about the recipe", rows: 5, required: true, autofocus: true, class: "px-4 py-2 rounded-md mt-2 w-full bg-blue-100" %>
+    </div>
+    <div class="my-4">
+      <%= form.label :public %><br/>
+      <%= form.label :public, "Yes", value: "true" %>
+      <%= form.radio_button :public, true, checked: true %> &nbsp; &nbsp;
+      <%= form.label :public, "No", value: "false" %>
+      <%= form.radio_button :public, false %>
+    </div>
+    <div class="bg-green-300 hover:bg-green-100 rounded-lg py-2 text-center font-bold cursor-pointer mt-4 text-gray-700">
+      <%= form.submit "Add Recipe", data: { disable_with: "Loading" } %>
+    </div>
+  <% end %>
+</div>

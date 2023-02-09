@@ -1,0 +1,22 @@
+<div class="flex flex-col justify-center">
+  <% if @recipes.empty? %>
+    <div class="text-center">
+      <h1 class="text-3xl font-bold">No recipes yet!</h1>
+      <p class="text-xl">Add a recipe to get started.</p>
+      <img class="w-1/2 mx-auto" src="https://cdn-icons-png.flaticon.com/512/2889/2889314.png" alt="No recipes yet">
+    </div>
+  <% else %>
+    <% @recipes.each do |recipe| %>
+      <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow my-4">
+        <%= link_to recipe_path(recipe.id) do %>
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"><%= recipe.name %></h5>
+          <p class="mb-3 font-normal text-gray-700"><%= recipe.description %></p>
+        <% end %>
+        <%= button_to "Delete", recipe_path(recipe.id), method: :delete, class: "inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300" %>
+      </div>
+    <% end %>
+  <% end %>
+  <div class="text-center my-8">
+    <%= link_to "Add Recipe", new_recipe_path, class: "text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" %>
+  </div>
+</div>

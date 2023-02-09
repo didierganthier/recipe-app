@@ -1,0 +1,32 @@
+<div id="<%= dom_id food %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= food.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Measurement unit:</strong>
+    <%= food.measurement_unit %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Price:</strong>
+    <%= food.price %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Quantity:</strong>
+    <%= food.quantity %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= food.user_id %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this food", food, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this food', edit_food_path(food), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
